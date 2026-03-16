@@ -4,7 +4,7 @@ import { Navbar } from './components/Nav/Nav'
 import {Hero} from "./components/Hero/Hero"
 import {CardService} from "./components/Cards/Cards"
 import hero1  from "./assets/Img/hero1.jpeg"
-
+import { LuDraftingCompass } from "react-icons/lu";
 
 function App() {
 
@@ -43,7 +43,12 @@ function App() {
       <section className="servicios">
         <h2 className="serviciosTitle">Servicios</h2>
          <div className="serviciosContainer">
+            <CardService icon={<LuDraftingCompass/>}
+            title="Diseño E ingenieria"
+                          text="Diseños funcionales de redes eléctricas de media y baja tensión aplicando las normas
+                          vigentes de construcción, seguridad y del operador de red. "/>
             <CardService/>
+         
          </div>
       </section>
     </>

@@ -2,13 +2,17 @@ import React from "react"
 import "./Cards.css"
 import { LuDraftingCompass } from "react-icons/lu";
 
-export const CardService = ()=>{
+export const CardService = ({icon,title,text})=>{
     return(
         <div className="cardService">
-            <LuDraftingCompass className="iconService"/>
+            <div className="containerIcon">
+            {icon}
+            </div>
             <div className="serviceContent">
-                <h3 className="serviceTitle">Diseño e ingenieria</h3>
-                <p className="serviceText"></p>
+                <h3 className="serviceTitle">{title}</h3>
+                <p className="serviceText">
+                {text}
+                </p>
             </div>
         </div>
     )

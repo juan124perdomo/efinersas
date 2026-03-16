@@ -91,7 +91,8 @@
     position: fixed; 
     top: 50px;       
     left: 0;         
-       
+    width: 100%;      /* Ocupa todo el ancho en móvil */
+    min-width: 100%;
     height: 100vh;  
     gap: 20px; 
     background-color: var(--bg-dark);
