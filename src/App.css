@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/Font/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Acepta todos los pesos si es variable */
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* --- INTER --- */
+  @font-face {
+    font-family: 'Inter';
+    src: url('../../assets/Font/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+:root{
+    /* Color*/
+    --primary: #f9c006;
+    --black-text:#000000;
+    --secundary:#ffffff;
+    --text-gray:#4a505a;
+    --liner-gray:#363636d4;
+    --liner-gray-hover:#585858d4 ;
+
+    /*background*/
+    --bg-light: #ffffff;
+    --bg-dark: #000000;
+
+    /*Font text*/
+    --font-text: "Inter";
+    --font-title:"Montserrat";
+}
+
+
+.quienesSomos{
+    margin: 30px 0;
+    padding: 50px 25px;
+    
+}
+.quienesTrayectoria{
+    background-color: #fef0c2;
+    padding: 5px;
+    font-family: var(--font-text);
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.quienesTitle{
+    font-family: var(--font-title);
+    margin: 10px 0;
+    font-size: 1.7rem;
+}
+
+.textContainer{
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+.quienesText{
+    font-family: var(--font-text);
+    text-wrap: pretty;
+    margin: 10px 0;
+    color:var(--text-gray) ;
+}
+
+.servicios{
+    margin: 30px 0;
+    padding: 50px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.serviciosTitle{
+    text-align: center;
+    width: 170px;
+    font-family: var(--font-title);
+    margin: 10px 0;
+    font-size: 1.7rem;
+    border-bottom: 4px  solid var(--primary);
+}
+
+.serviciosContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px 0;
+}

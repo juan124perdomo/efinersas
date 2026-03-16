@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../assets/Font/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Acepta todos los pesos si es variable */
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* --- INTER --- */
+  @font-face {
+    font-family: 'Inter';
+    src: url('../../assets/Font/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+:root{
+    /* Color*/
+    --primary: #f9c006;
+    --black-text:#000000;
+    --secundary:#ffffff;
+    --liner-gray:#363636d4;
+    --liner-gray-hover:#585858d4 ;
+
+    /*background*/
+    --bg-light: #ffffff;
+    --bg-dark: #000000;
+
+    /*Font text*/
+    --font-text: "Inter",sans-serif;
+    --font-title:"Montserrat", sans-serif;
+}
+
+.header{
+    background-color:var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    flex-direction: row;
+    padding: 10px 14px 10px 24px;
+    width: 100%; 
+}
+
+.title{
+    color: var(--primary);
+    font-family:'Montserrat';
+    font-weight: bold;
+    font-size: 1rem;
+}
+.titleStrong{
+    color: var(--secundary);
+}
+
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    background-color: #000;
+    padding: 10px 8px;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-text);
+    position: relative;
+    box-sizing: border-box;
+    
+}
+
+
+.icon:hover{
+    color: var(--primary);
+}
+.iconMenu{
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.iconMenu:hover{
+    color: var(--bg-light);
+}
+
+.navList{
+    z-index: 100;
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    text-align: start;
+    position: fixed; 
+    top: 50px;       
+    left: 0;         
+       
+    height: 100vh;  
+    gap: 20px; 
+    background-color: var(--bg-dark);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-top: 1px solid var(--liner-gray);
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
+
+.navList:hover{
+    border-color: var(--liner-gray-hover);
+}
+.navList.activo{
+    display: flex;
+}
+.navList li{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    transition: color .5s ease;
+    padding: 10px;
+}
+
+.navList li:hover{
+    color: var(--primary);
+}
+
+.contacto-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+
+.contacto-titulo{
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--primary);
+}
+
+.contacto-item{
+    display: flex;
+    color: var(--secundary);
+    gap: 8px;
+}
+
+.contacto-item span:hover{
+    color: var(--primary);
+}
+
+
+.icon-small{
+    color: var(--primary);
+}
+
+.redes-sociales{
+    color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 15px;
+}
+.social-box{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+    padding: 7px ;
+    border: 1px solid #ffffff80;
+    border-radius: 5px;
+}
+.social-box:hover{
+    color: var(--secundary);
+}
+
+/* Solo 768px (tablet): ajustes sin tocar móvil */
+@media screen and (min-width: 768px) {
+
+    .header{
+        padding: 10px 8px 10px 24px;
+    }
+
+    .title{
+        font-size: 1.5rem;
+    }
+
+    .icon,
+    .iconMenu,
+    .icon-small {
+        display: none;
+    }
+    .nav{
+        font-size: 13px;
+    }
+
+    .navList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: static;
+        width: auto;
+        height: auto;
+        border-top: none;
+        padding: 5px 8px;
+        gap: 14px;
+        color: white;
+        background-color: #000;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-text);
+        box-sizing: border-box;
+        
+    }
+    .navList li{
+        padding: 5px;
+        
+    }
+
+
+    .contactos{
+        /* Cambiamos el padding a 7px arriba/abajo y 10px a los lados */
+        
+        background-color: var(--primary);
+        color: var(--black-text);
+        border-radius: 8px;
+    }
+    li:nth-child(5n){
+        padding: 7px 10px; 
+    }
+
+    li:nth-child(5n):hover{
+        color: var(--primary);
+        background-color: var(--bg-light);
+    } 
+
+    
+
+    .navList li:last-child {
+        display: none;
+    }
+    .contacto-container{
+        display: none;
+    }
+
+
+}
+
+@media screen and (min-width: 1024px){
+    .nav{
+        font-size: 14px;
+    }
+}
