@@ -196,7 +196,7 @@
         );
     }
 
-    .serviceContent{
+    .serviciosContainer{
         flex-flow: row wrap;
     }
 }

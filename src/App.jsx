@@ -69,18 +69,18 @@ function App() {
          <div className="serviciosContainer">
             <CardService icon={<LuDraftingCompass/>}
             title="Diseño E ingenieria"
-                          text="En Efiner S.A.S. diseñamos redes eléctricas de media y baja tensión, cumpliendo normas vigentes y requisitos del operador de red, para proyectos urbanos, rurales e industriales, garantizando soluciones seguras, eficientes y técnicamente viables."/>
+                          text="En Efiner S.A.S. diseñamos redes eléctricas de media y baja tensión bajo normas vigentes y del operador de red, brindando soluciones seguras y eficientes para proyectos urbanos, rurales e industriales."/>
             <CardService icon={<LuMap/>} 
                           title="Levantamientos Georreferenciados"
-                          text="En Efiner S.A.S. realizamos Levantamientos Georreferenciados para la ubicación precisa de postes y puntos clave, garantizando exactitud y eficiencia en tus proyectos"/>
+                          text="En Efiner S.A.S. realizamos levantamientos georreferenciados para ubicar postes y puntos clave con precisión y eficiencia."/>
 
             <CardService icon={<LuGauge/>}
                           title="Mediciones Industriales"
-                          text="En Efiner S.A.S. ofrecemos soluciones en mediciones industriales, realizando montaje e instalación de sistemas de medición de energía, cumpliendo normativa vigente RETIE/NTC y estándares del operador de red."
+                          text="En Efiner S.A.S. realizamos mediciones industriales y montaje de sistemas de energía, cumpliendo RETIE/NTC y estándares del operador de red."
                         />
             <CardService icon={<LuWrench />}
                           title="Construccion y mantenimiento"
-                          text="En Efiner S.A.S. ofrecemos construcción y mantenimiento de redes eléctricas de media y baja tensión, incluyendo redes y subestaciones subterráneas, garantizando seguridad, calidad y cumplimiento del RETIE, NTC y estándares del operador de red."/>
+                          text="En Efiner S.A.S. realizamos construcción y mantenimiento de redes eléctricas MT y BT, incluyendo redes y subestaciones subterráneas, con seguridad y cumplimiento del RETIE, NTC y estándares del operador de red."/>
          
          </div>
       </section>
