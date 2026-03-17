@@ -3,6 +3,7 @@ import './App.css'
 import { Navbar } from './components/Nav/Nav'
 import {Hero} from "./components/Hero/Hero"
 import {CardService} from "./components/Cards/Cards"
+import { Footer } from './components/Footer/Footer'
 import hero1  from "./assets/Img/hero1.jpeg"
 import quienesMovil from "./assets/Img/quienes somos.png"
 import quienesPC from "./assets/Img/quienes.jpg"
@@ -84,6 +85,7 @@ function App() {
          
          </div>
       </section>
+      <Footer/>
     </>
   )
 }
