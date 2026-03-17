@@ -34,8 +34,9 @@
 
 
 .cardService{
-    max-width: 300px;
-    min-width: 280px;
+    max-width: 305px;
+    min-width: 300px;
+    height:350px;
     display: flex;
     justify-content: center;
     align-items: start;

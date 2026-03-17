@@ -4,7 +4,10 @@ import { Navbar } from './components/Nav/Nav'
 import {Hero} from "./components/Hero/Hero"
 import {CardService} from "./components/Cards/Cards"
 import hero1  from "./assets/Img/hero1.jpeg"
-import { LuDraftingCompass } from "react-icons/lu";
+import quienesMovil from "./assets/Img/quienes somos.png"
+import quienesPC from "./assets/Img/quienes.jpg"
+import { LuDraftingCompass, LuMap, LuGauge,LuWrench  } from "react-icons/lu";
+
 
 function App() {
 
@@ -20,9 +23,11 @@ function App() {
 
 
       <section className="quienesSomos">
-        <span className='quienesTrayectoria'>Nuestra trayectoria</span>
-        <h2 class="quienesTitle">Quienes somos</h2>
+        
+        
         <div className="textContainer">
+          <span className='quienesTrayectoria'>Nuestra trayectoria</span>
+           <h2 class="quienesTitle">Quienes somos</h2>
             <p className="quienesText">
               Somos una empresa confiable con excelentes recursos de
               ingeniería Y de gran Experiencia personal con un enfoque en la
@@ -38,6 +43,25 @@ function App() {
 
               </p>
         </div>
+        
+        
+        <div className="quienesImage">
+        <picture>
+          <source
+            srcSet={quienesMovil}
+            media="(max-width: 767px)"/>
+          <source
+            srcSet={quienesPC}
+            media="(min-width: 768px)"
+          />
+          {/* Imagen de respaldo por si el navegador no soporta <picture> */}
+          <img
+            src={quienesPC}
+            alt="Ingenieros trabajando en subestación eléctrica"
+          />
+        </picture>
+        </div>
+
       </section>
 
       <section className="servicios">
@@ -45,9 +69,18 @@ function App() {
          <div className="serviciosContainer">
             <CardService icon={<LuDraftingCompass/>}
             title="Diseño E ingenieria"
-                          text="Diseños funcionales de redes eléctricas de media y baja tensión aplicando las normas
-                          vigentes de construcción, seguridad y del operador de red. "/>
-            <CardService/>
+                          text="En Efiner S.A.S. diseñamos redes eléctricas de media y baja tensión, cumpliendo normas vigentes y requisitos del operador de red, para proyectos urbanos, rurales e industriales, garantizando soluciones seguras, eficientes y técnicamente viables."/>
+            <CardService icon={<LuMap/>} 
+                          title="Levantamientos Georreferenciados"
+                          text="En Efiner S.A.S. realizamos Levantamientos Georreferenciados para la ubicación precisa de postes y puntos clave, garantizando exactitud y eficiencia en tus proyectos"/>
+
+            <CardService icon={<LuGauge/>}
+                          title="Mediciones Industriales"
+                          text="En Efiner S.A.S. ofrecemos soluciones en mediciones industriales, realizando montaje e instalación de sistemas de medición de energía, cumpliendo normativa vigente RETIE/NTC y estándares del operador de red."
+                        />
+            <CardService icon={<LuWrench />}
+                          title="Construccion y mantenimiento"
+                          text="En Efiner S.A.S. ofrecemos construcción y mantenimiento de redes eléctricas de media y baja tensión, incluyendo redes y subestaciones subterráneas, garantizando seguridad, calidad y cumplimiento del RETIE, NTC y estándares del operador de red."/>
          
          </div>
       </section>
