@@ -1,16 +1,37 @@
 import React from "react"
 import "./Footer.css"
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { IoMdMail } from "react-icons/io";
 
 export const Footer = ()=>{
     return(
         <footer className="footer">
+            <div className="containerFooter">
             <div className="footerTitle">
-                <h3 className="title">EFINER<span className="titleStrong">S.A.S.</span></h3>
+                <img className="footerLogo" src="/public/logo.png" alt="logo efiner" />
+                <h3 className="titleFooter">EFINER<span className="titleFooterStrong">S.A.S.</span></h3>
 
-                <span className="textFooter">
+                <p className="textFooter">
                 Líderes en soluciones de ingeniería eléctrica y civil.
                 Comprometidos con el desarrollo de infraestructura para un mundo más eficiente.
-                </span>
+                </p>
+            </div>
+            <div className="footerServicios">
+                <h3 className="titleSub">Servicios</h3>
+                    <ul className="footerList">
+                        <li className="footerListItem">Diseño E ingenieria</li>
+                        <li className="footerListItem">Perdidas de Energia</li>
+                        <li className="footerListItem">Capacitacion y Formacion</li>
+                        <li className="footerListItem">Energia Fotovoltaica</li>
+                    </ul>
+            </div>
+            <div className="footerContact">
+                <h3 className="titleSub">Contactos</h3>
+                <ul className="footerList">
+                    <li className="footerListItem"><BsFillTelephoneFill className="footerIcon"/>+57 3122932695</li>
+                    <li className="footerListItem"><IoMdMail className="footerIcon"/>comercial@efinersas.com</li>
+                </ul>
+            </div>
             </div>
 
         </footer>
