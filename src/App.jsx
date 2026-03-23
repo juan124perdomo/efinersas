@@ -11,8 +11,9 @@ import { Contactos } from "./pages/Contactos/Contactos"
 
 function App() {
   return (
-    <>
+    <div className="app-shell">
       <Navbar />
+      <main className="app-main">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/servicios" element={<Servicios />} />
@@ -20,8 +21,9 @@ function App() {
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/contacto" element={<Contactos />} />
       </Routes>
+      </main>
       <Footer />
-    </>
+      </div>
   )
 }
 
