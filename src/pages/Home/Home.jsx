@@ -3,11 +3,16 @@ import { CardService } from "../../components/Cards/Cards"
 import hero1 from "../../assets/Img/hero1.jpeg"
 import quienesMovil from "../../assets/Img/quienes somos.png"
 import quienesPC from "../../assets/Img/quienes.jpg"
+import { SEO } from "../../components/SEO/SEO"
 import { LuDraftingCompass, LuMap, LuGauge, LuWrench } from "react-icons/lu"
 
 export function Home() {
   return (
     <>
+      <SEO 
+        title="Inicio" 
+        description="Lideres en el sector eléctrico colombiano. Diseño de redes MT/BT, levantamientos georreferenciados, drones y energía solar." 
+      />
       <Hero
         hero={hero1}
         title="Expertos en eficiencia"

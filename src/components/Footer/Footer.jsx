@@ -28,8 +28,16 @@ export const Footer = ()=>{
             <div className="footerContact">
                 <h3 className="titleSub">Contactos</h3>
                 <ul className="footerList">
-                    <li className="footerListItem"><BsFillTelephoneFill className="footerIcon"/>+57 312 2932695</li>
-                    <li className="footerListItem"><IoMdMail className="footerIcon"/>comercial@efinersas.com</li>
+                    <li className="footerListItem">
+                        <a href="tel:+573122932695" style={{color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px'}}>
+                            <BsFillTelephoneFill className="footerIcon"/>+57 312 2932695
+                        </a>
+                    </li>
+                    <li className="footerListItem">
+                        <a href="mailto:comercial@efinersas.com" style={{color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px'}}>
+                            <IoMdMail className="footerIcon"/>comercial@efinersas.com
+                        </a>
+                    </li>
                 </ul>
             </div>
             </div>

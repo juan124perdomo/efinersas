@@ -71,21 +71,21 @@ export const Navbar = () => {
           <li className="contactoDirecto">
             <div className="contacto-container">
               <span className="contacto-titulo">CONTACTO DIRECTO</span>
-              <div className="contacto-item">
+              <a href="tel:+573122932695" className="contacto-item" style={{color: 'inherit', textDecoration: 'none'}}>
                 <IoCall className="icon-small" />
                 <span>+57 312 2932695</span>
-              </div>
-              <div className="contacto-item">
+              </a>
+              <a href="mailto:comercial@efinersas.com" className="contacto-item" style={{color: 'inherit', textDecoration: 'none'}}>
                 <IoMail className="icon-small" />
                 <span>Comercial@efinersas.com</span>
-              </div>
+              </a>
               <div className="redes-sociales">
-                <div className="social-box">
+                <a href="#" target="_blank" rel="noopener noreferrer" className="social-box" aria-label="Perfil de LinkedIn de Efiner" style={{color: 'inherit'}}>
                   <IoLogoLinkedin />
-                </div>
-                <div className="social-box">
+                </a>
+                <a href="https://www.instagram.com/tv/CkhDXNbAOHb/?utm_source=ig_web_copy_link" target="_blank" rel="noopener noreferrer" className="social-box" aria-label="Perfil de Instagram de Efiner" style={{color: 'inherit'}}>
                   <IoLogoInstagram />
-                </div>
+                </a>
               </div>
             </div>
           </li>
