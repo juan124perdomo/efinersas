@@ -34,9 +34,9 @@
 
 
 .cardService{
-    max-width: 290px;
+    max-width: 310px;
     min-width: 270px;
-    height:320px;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -80,4 +80,20 @@
     font-size: 14px;
     line-height: 20px;
     color:var(--text-gray);
+}
+.cardLink{
+    margin: 10px 0;
+    font-family: var(--font-text);
+    font-size: 14px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.cardLink:hover{
+    transform: translateX(4px);
+    text-decoration: underline;
 }

@@ -19,10 +19,10 @@ export const Footer = ()=>{
             <div className="footerServicios">
                 <h3 className="titleSub">Servicios</h3>
                     <ul className="footerList">
-                        <li className="footerListItem">Diseño E ingenieria</li>
-                        <li className="footerListItem">Perdidas de Energia</li>
-                        <li className="footerListItem">Capacitacion y Formacion</li>
-                        <li className="footerListItem">Energia Fotovoltaica</li>
+                        <li className="footerListItem">Ingeniería y Diseño</li>
+                        <li className="footerListItem">Construcción y Mantenimiento</li>
+                        <li className="footerListItem">Eficiencia Energética</li>
+                        <li className="footerListItem">Energía Solar</li>
                     </ul>
             </div>
             <div className="footerContact">
@@ -41,7 +41,11 @@ export const Footer = ()=>{
                 </ul>
             </div>
             </div>
-
+            <div className="footerBottom">
+             <span className="copyright">
+             ©  2026 EFINER S.A.S. | Todos los derechos reservados.
+             </span>
+            </div>
         </footer>
     )
 }

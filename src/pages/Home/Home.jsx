@@ -4,7 +4,8 @@ import hero1 from "../../assets/Img/hero1.jpeg"
 import quienesMovil from "../../assets/Img/quienes somos.png"
 import quienesPC from "../../assets/Img/quienes.jpg"
 import { SEO } from "../../components/SEO/SEO"
-import { LuDraftingCompass, LuMap, LuGauge, LuWrench } from "react-icons/lu"
+import { FaBolt, FaTools, FaLeaf, FaSolarPanel } from "react-icons/fa";
+
 
 export function Home() {
   return (
@@ -56,25 +57,29 @@ export function Home() {
         <h2 className="serviciosTitle">Servicios</h2>
         <div className="serviciosContainer">
           <CardService
-            icon={<LuDraftingCompass />}
-            title="Diseño E ingenieria"
-            text="En Efiner S.A.S. diseñamos redes eléctricas de media y baja tensión bajo normas vigentes y del operador de red, brindando soluciones seguras y eficientes para proyectos urbanos, rurales e industriales."
+            icon={<FaBolt />}
+            title="Ingeniería y Diseño"
+            text="Diseño de redes eléctricas y subestaciones bajo normativa RETIE."
+             to="/servicios"
           />
           <CardService
-            icon={<LuMap />}
-            title="Levantamientos Georreferenciados"
-            text="En Efiner S.A.S. realizamos levantamientos georreferenciados para ubicar postes y puntos clave con precisión y eficiencia."
+            icon={<FaTools />}
+            title="Construcción y Mantenimiento"
+            text="Construcción y mantenimiento de redes eléctricas y subestaciones."
+             to="/servicios"
           />
 
           <CardService
-            icon={<LuGauge />}
-            title="Mediciones Industriales"
-            text="En Efiner S.A.S. realizamos mediciones industriales y montaje de sistemas de energía, cumpliendo RETIE/NTC y estándares del operador de red."
+            icon={<FaLeaf />}
+            title="Eficiencia Energética"
+            text="Optimización del consumo y reducción de pérdidas de energía."
+             to="/servicios"
           />
           <CardService
-            icon={<LuWrench />}
-            title="Construccion y mantenimiento"
-            text="En Efiner S.A.S. realizamos construcción y mantenimiento de redes eléctricas MT y BT, incluyendo redes y subestaciones subterráneas, con seguridad y cumplimiento del RETIE, NTC y estándares del operador de red."
+            icon={<FaSolarPanel />}
+            title="Energía Solar"
+            text="Diseño e instalación de sistemas fotovoltaicos."
+            to="/servicios"
           />
         </div>
       </section>
