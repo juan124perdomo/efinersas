@@ -1,50 +1,96 @@
-import React, {useState} from "react"
-import { IoMenu,IoHome,IoBriefcase,IoMail,IoCall,IoLogoLinkedin,IoLogoInstagram } from "react-icons/io5";
-import { HiLightningBolt } from "react-icons/hi";
-import { FaUsers } from "react-icons/fa6";
+import React, { useState } from "react"
+import { NavLink } from "react-router-dom"
+import {
+  IoMenu,
+  IoHome,
+  IoMail,
+  IoCall,
+  IoLogoLinkedin,
+  IoLogoInstagram,
+  IoBriefcase,
+} from "react-icons/io5"
+import { HiLightningBolt } from "react-icons/hi"
+import { FaUsers } from "react-icons/fa6"
 import "./Nav.css"
 
+const links = [
+  { to: "/", icon: <IoHome className="icon" />, label: "Inicio", end: true },
+  {
+    to: "/servicios",
+    icon: <HiLightningBolt className="icon" />,
+    label: "Servicios",
+  },
+  {
+    to: "/proyectos",
+    icon: <IoBriefcase className="icon" />,
+    label: "Proyectos",
+  },
+  { to: "/nosotros", icon: <FaUsers className="icon" />, label: "Nosotros" },
+  {
+    to: "/contacto",
+    icon: <IoMail className="icon" />,
+    label: "Contacto",
+    className: "contactos",
+  },
+]
 
-export const Navbar = ()=>{
+export const Navbar = () => {
+  const [abierto, setAbierto] = useState(false)
+  const cerrar = () => setAbierto(false)
 
-const [abierto, setAbierto] = useState(false);
+  return (
+    <header className="header">
+      <h3 className="title">
+        EFINER<span className="titleStrong">S.A.S.</span>
+      </h3>
 
-    return <header className="header">
-        <h3 className="title">EFINER<span className="titleStrong">S.A.S.</span></h3>
-        
-                <nav className="nav">
-                    
-                    <IoMenu className="icon iconMenu" onClick={()=>setAbierto(!abierto)} />
-                    <ul className={abierto ? "navList activo": "navList"}>
-                    
-                        <li> <IoHome className="icon"/> Inicio</li>
-                        <li><HiLightningBolt className="icon"/>  Servicios</li>
-                        <li><IoBriefcase className="icon"/>Proyectos</li>
-                        <li><FaUsers className="icon"/>Nosotros</li>
-                        <li className="contactos"><IoMail className="icon"/>Contacto</li>
-                        <li className="contactoDirecto">
-                            <div className="contacto-container">
-                                <span className="contacto-titulo">CONTACTO DIRECTO</span>
-                                
-                                <div className="contacto-item">
-                                    <IoCall className="icon-small" />
-                                    <span>+57 (300) 123 4567</span>
-                                </div>
+      <nav className="nav">
+        <IoMenu
+          className="icon iconMenu"
+          onClick={() => setAbierto(!abierto)}
+          aria-label="Abrir menú"
+          aria-expanded={abierto}
+        />
 
-                                <div className="contacto-item">
-                                    <IoMail className="icon-small" />
-                                    <span>proyectos@efiner.com.co</span>
-                                </div>
+        <ul className={abierto ? "navList activo" : "navList"}>
+          {links.map(({ to, icon, label, end, className }) => (
+            <li key={to} className={className}>
+              <NavLink
+                to={to}
+                end={end}
+                onClick={cerrar}
+                className={({ isActive }) =>
+                  isActive ? "navLink active" : "navLink"
+                }
+              >
+                {icon} {label}
+              </NavLink>
+            </li>
+          ))}
 
-                                <div className="redes-sociales">
-                                    <div className="social-box"><IoLogoLinkedin /></div>
-                                    <div className="social-box"><IoLogoInstagram /></div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                
-                </nav>
-
+          <li className="contactoDirecto">
+            <div className="contacto-container">
+              <span className="contacto-titulo">CONTACTO DIRECTO</span>
+              <div className="contacto-item">
+                <IoCall className="icon-small" />
+                <span>+57 312 2932695</span>
+              </div>
+              <div className="contacto-item">
+                <IoMail className="icon-small" />
+                <span>Comercial@efinersas.com</span>
+              </div>
+              <div className="redes-sociales">
+                <div className="social-box">
+                  <IoLogoLinkedin />
+                </div>
+                <div className="social-box">
+                  <IoLogoInstagram />
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </header>
+  )
 }

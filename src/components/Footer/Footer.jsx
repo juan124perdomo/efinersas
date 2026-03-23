@@ -28,7 +28,7 @@ export const Footer = ()=>{
             <div className="footerContact">
                 <h3 className="titleSub">Contactos</h3>
                 <ul className="footerList">
-                    <li className="footerListItem"><BsFillTelephoneFill className="footerIcon"/>+57 3122932695</li>
+                    <li className="footerListItem"><BsFillTelephoneFill className="footerIcon"/>+57 312 2932695</li>
                     <li className="footerListItem"><IoMdMail className="footerIcon"/>comercial@efinersas.com</li>
                 </ul>
             </div>
