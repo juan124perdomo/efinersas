@@ -8,7 +8,7 @@ export const Footer = ()=>{
         <footer className="footer">
             <div className="containerFooter">
             <div className="footerTitle">
-                <img className="footerLogo" src="/public/logo.png" alt="logo efiner" />
+                <img className="footerLogo" src="/logo.png" alt="logo efiner" />
                 <h3 className="titleFooter">EFINER<span className="titleFooterStrong">S.A.S.</span></h3>
 
                 <p className="textFooter">
