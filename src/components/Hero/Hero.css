@@ -54,9 +54,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     max-width: 85%;
+    box-sizing: border-box;
+    text-align: center;
     animation: heroFadeIn 0.8s ease-out;
 }
+
 
 
 .hero-title {
@@ -64,17 +68,27 @@
     letter-spacing: 0.02em;
     margin: 0 0 1rem;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-    font-size: clamp(1.8rem, 1.2rem + 2.5vw, 3.5rem);
+    font-size: clamp(2rem, 2rem + 2vw, 3.3rem);
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     line-height: 1.25;
-    text-wrap: pretty;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .hero-title .highlight {
     color: var(--primary);
     font-weight: 800;
-    position: relative;
+    position: static;
+    left: 0;
+    display: inline;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .hero-subtitle {
@@ -93,21 +107,55 @@
 @media (max-width: 768px) {
     .hero {
         background-attachment: scroll;
-        min-height: 95vh;
-        padding: 2rem 1.5rem;
+        min-height: 90vh;
+        padding: 5rem 1rem 2rem 1rem;
     }
     
+    .hero-content {
+        max-width: 95%;
+        padding: 0 0.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 2rem + 2vw, 2.8rem);
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+    }
 }
 
+@media (min-width: 769px) and (max-width: 1023px) {
+    .hero-title {
+        font-size: 3.2rem;
+    }
+}
 
-
-@media (min-width: 1441px) {
+@media (min-width: 1024px){
     .hero {
-        min-height: 90vh;
+        width: 100%;
+       
+        
+        padding: 3.5rem 3rem;
+    }
+        .hero-content {
+            max-width: 48rem;
+        }
+    
+    .hero-title {
+        font-size: 3.9rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero {
+        width: 100%;
+        
         padding: 3.5rem 3rem;
     }
     .hero-content {
         max-width: 48rem;
+    }
+    .hero-title {
+        font-size: 4rem;
     }
     .hero-subtitle {
         margin-bottom: 2.5rem;

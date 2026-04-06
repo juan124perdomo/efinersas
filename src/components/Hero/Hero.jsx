@@ -27,3 +27,4 @@ export const Hero = ({hero,title,titleHiglight,subTitle}) => {
         </section>
     )
 }
+

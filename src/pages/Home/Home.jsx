@@ -16,9 +16,9 @@ export function Home() {
       />
       <Hero
         hero={hero1}
-        title="Expertos en eficiencia"
-        titleHiglight="comprometidos con tu éxito."
-        subTitle="Transformamos la infraestructura energética a través de consultoría técnica especializada."
+        title="Ingeniería eléctrica integral"
+        titleHiglight="y eficiencia energética."
+        subTitle="Diseñamos, construimos y optimizamos redes eléctricas, subestaciones y sistemas de medición con soluciones innovadoras y seguras."
       />
 
       <section className="quienesSomos">
