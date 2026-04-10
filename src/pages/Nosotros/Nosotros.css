@@ -1,0 +1,41 @@
+
+.IdentityContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+.identity {
+    margin: 20px 5px;
+    padding: 30px 10px;
+    text-align: start;
+    text-wrap: pretty;
+    box-sizing: border-box;
+}
+
+.identityTitle {
+    font-size: 2.2rem;
+    color: var(--black-text);
+    margin-bottom: 15px;
+    font-family: var(--font-title);
+}
+.identityText {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-family: var(--font-text);
+}
+.containerCardsIdentity{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+@media screen and(min-width: 768px){
+
+}
