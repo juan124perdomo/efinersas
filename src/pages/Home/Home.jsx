@@ -5,7 +5,7 @@ import quienesMovil from "../../assets/Img/quienes somos.png"
 import quienesPC from "../../assets/Img/quienes.jpg"
 import { SEO } from "../../components/SEO/SEO"
 import { FaBolt, FaTools, FaLeaf, FaSolarPanel } from "react-icons/fa";
-
+import "./Home.css"
 
 export function Home() {
   return (
@@ -23,7 +23,7 @@ export function Home() {
 
       <section className="quienesSomos">
         <div className="textContainer">
-          <span className="quienesTrayectoria">Nuestra trayectoria</span>
+          <span className="bagde">Nuestra trayectoria</span>
           <h2 className="quienesTitle">Quienes somos</h2>
           <p className="quienesText">
             Somos una empresa confiable con excelentes recursos de ingeniería Y
@@ -82,6 +82,10 @@ export function Home() {
             to="/servicios"
           />
         </div>
+      </section>
+
+      <section className="porQueElegirnos">
+         <span className="bagde">Nuestro respaldo técnico</span>
       </section>
     </>
   )
