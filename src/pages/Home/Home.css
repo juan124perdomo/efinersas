@@ -1,45 +1,47 @@
-.quienesSomos{
-    margin: 30px 0;
-    padding: 50px 1px;
+.quienesSomos {
+    margin: -100px 0 30px;
+    padding: 140px 1px 50px;
+    position: relative;
+    z-index: 2;
 }
-.textContainer{
+
+.textContainer {
     margin: 20px 15px 0;
     box-sizing: border-box;
 }
 
 
-.quienesImage{
+.quienesImage {
     position: relative;
     top: -50px;
     z-index: -1;
 }
 
-.quienesImage picture{
+.quienesImage picture {
     border: none;
 }
 
 
-.quienesImage::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background: linear-gradient(
-        to bottom, 
-        rgba(255, 255, 255, 1) 10%, 
-        rgba(255, 255, 255, 0) 80%
-    );
-  }
+.quienesImage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgb(10, 10, 10) 10%,
+            rgba(10, 10, 10, 0) 80%);
+}
 
-.quienesImage img{
+.quienesImage img {
     width: 100%;
     display: block;
-    object-fit:cover;
+    object-fit: cover;
     max-height: 400px;
-}  
-  
+}
 
-.quienesTrayectoria{
-    background-color: #fef0c2;
+
+.bagde {
+    background-color: #332a00;
+    color: var(--primary);
     font-family: var(--font-text);
     font-weight: bold;
     font-size: 12px;
@@ -49,7 +51,7 @@
     font-weight: 600;
 }
 
-.quienesTitle{
+.quienesTitle {
     font-family: var(--font-title);
     font-size: 1.7rem;
     margin: 16px 0;
@@ -57,35 +59,36 @@
 
 
 
-.quienesText{
+.quienesText {
     font-family: var(--font-text);
     text-wrap: pretty;
     margin: 10px 0;
-    color:var(--text-gray) ;
+    color: var(--text-gray);
     line-height: 1.7;
 }
 
-.servicios{
+.servicios {
     margin: 30px 0;
     padding: 50px 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #fdfdfa;
+    background-color: transparent;
 
 }
-.serviciosTitle{
+
+.serviciosTitle {
     text-align: center;
     width: 170px;
     font-family: var(--font-title);
     margin: 10px 0;
     padding: 10px 0;
     font-size: 1.7rem;
-    border-bottom: 4px  solid var(--primary);
+    border-bottom: 4px solid var(--primary);
 }
 
-.serviciosContainer{
+.serviciosContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,48 +98,45 @@
 }
 
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .quienesSomos {
         position: relative;
-        margin: 30px 0;
-        padding: 50px 40px;
+        margin: -150px 0 0px;
+        padding: 200px 40px 50px;
         overflow: hidden;
         min-height: 500px;
-    }
-    .quienesSomos::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background: 
-        /* arriba */
-        linear-gradient(
-            to bottom, 
-            rgba(255, 255, 255, 1) 5%, 
-            rgba(255, 255, 255, 0) 30%
-        ),
-        /* abajo */
-        linear-gradient(
-            to top, 
-            rgba(255, 255, 255, 1) 5%, 
-            rgba(255, 255, 255, 0) 20%
-        );
+        z-index: 2;
     }
 
-    
+    .quienesSomos::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            /* Oscurece el fondo abajo para la siguiente seccion */
+            linear-gradient(to top,
+                rgb(10, 10, 10) 5%,
+                rgba(10, 10, 10, 0) 30%);
+        pointer-events: none;
+    }
+
+
     .textContainer {
         position: relative;
         z-index: 1;
         max-width: 55%;
     }
 
-    
+
     .quienesImage {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 0; 
+        z-index: 0;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 200px);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 200px);
     }
 
     .quienesImage picture {
@@ -150,19 +150,18 @@
         height: 100%;
         object-fit: cover;
         object-position: right center;
-        max-height: none;  /* ← cancela el max-height: 400px de mobile */
+        max-height: none;
+        /* ← cancela el max-height: 400px de mobile */
     }
 
     .quienesImage::after {
-        background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0.92) 0%,
-            rgba(255, 255, 255, 0.6)  35%,
-            rgba(255, 255, 255, 0)    70%
-        );
+        background: linear-gradient(to right,
+                rgba(10, 10, 10, 0.92) 0%,
+                rgba(10, 10, 10, 0.6) 35%,
+                rgba(10, 10, 10, 0) 70%);
     }
 
-    .serviciosContainer{
+    .serviciosContainer {
         flex-flow: row wrap;
     }
 }

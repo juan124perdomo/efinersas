@@ -10,9 +10,9 @@ import "./Home.css"
 export function Home() {
   return (
     <>
-      <SEO 
-        title="Inicio" 
-        description="Lideres en el sector eléctrico colombiano. Diseño de redes MT/BT, levantamientos georreferenciados, drones y energía solar." 
+      <SEO
+        title="Inicio"
+        description="Lideres en el sector eléctrico colombiano. Diseño de redes MT/BT, levantamientos georreferenciados, drones y energía solar."
       />
       <Hero
         hero={hero1}
@@ -60,20 +60,20 @@ export function Home() {
             icon={<FaBolt />}
             title="Ingeniería y Diseño"
             text="Diseño de redes eléctricas y subestaciones bajo normativa RETIE."
-             to="/servicios"
+            to="/servicios"
           />
           <CardService
             icon={<FaTools />}
             title="Construcción y Mantenimiento"
             text="Construcción y mantenimiento de redes eléctricas y subestaciones."
-             to="/servicios"
+            to="/servicios"
           />
 
           <CardService
             icon={<FaLeaf />}
             title="Eficiencia Energética"
             text="Optimización del consumo y reducción de pérdidas de energía."
-             to="/servicios"
+            to="/servicios"
           />
           <CardService
             icon={<FaSolarPanel />}
@@ -85,7 +85,8 @@ export function Home() {
       </section>
 
       <section className="porQueElegirnos">
-         <span className="bagde">Nuestro respaldo técnico</span>
+        <span className="bagde">Nuestro respaldo técnico</span>
+        <h2 className="porQueElegirnos">¿Por qué elegirnos?</h2>
       </section>
     </>
   )

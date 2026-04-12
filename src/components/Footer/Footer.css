@@ -1,107 +1,81 @@
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../../assets/Font/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900; /* Acepta todos los pesos si es variable */
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* --- INTER --- */
-  @font-face {
-    font-family: 'Inter';
-    src: url('../../assets/Font/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-:root{
-    /* Color*/
-    --primary: #f9c006;
-    --black-text:#000000;
-    --secundary:#ffffff;
-    --text-gray:#4a505a;
-    --liner-gray:#363636d4;
-    --liner-gray-hover:#585858d4 ;
-    --copyright:#64748B;
-
-    /*background*/
-    --bg-light: #ffffff;
-    --bg-dark: #000000;
-
-    /*Font text*/
-    --font-text: "Inter";
-    --font-title:"Montserrat";
-}
-.footer{
-    background-color: var(--bg-dark);
-    padding: 30px 30px 10px 30px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    text-wrap: pretty;
+.footer {
+  background-color: var(--bg-black);
+  padding: 30px 30px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-wrap: pretty;
 }
 
-.containerFooter{
+.containerFooter {
   padding: 30px 0;
 }
 
-.footerTitle{
+.footerTitle {
   margin: 20px auto;
 }
-.footerLogo{
+
+.footerLogo {
   width: 70px;
 }
-.titleFooter{
+
+.titleFooter {
   color: var(--primary);
-    font-family:'Montserrat';
-    font-weight: bold;
-    font-size: 1.4rem;
-    
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 1.4rem;
+
 }
-.titleFooterStrong{
+
+.titleFooterStrong {
   color: var(--secundary);
 }
-.textFooter{
-  font-size:13px;
+
+.textFooter {
+  font-size: 13px;
   font-family: var(--font-text);
   color: #94a3b8;
   box-sizing: border-box;
   margin: 10px 15px 0 0;
   text-wrap: pretty;
 }
-.titleSub{
+
+.titleSub {
   font-family: var(--font-title);
   color: var(--primary);
   font-size: 14px;
 }
 
-.footerList{
+.footerList {
   margin: 15px 0;
-  
+
 }
-.footerListItem{
+
+.footerListItem {
   margin: 5px 0;
   list-style: none;
-  color:#94a3b8;
+  color: #94a3b8;
   font-family: var(--font-text);
-  font-size:13px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.footerIcon{
+
+.footerIcon {
   color: var(--primary);
 }
 
-.footerBottom{
-  border-top:1px solid var(--copyright) ;
+.footerBottom {
+  border-top: 1px solid var(--copyright);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 0;
   padding: 20px;
 }
-.copyright{
+
+.copyright {
   color: #64748B;
   padding: 20px;
   text-align: center;
@@ -109,62 +83,72 @@
   font-family: var(--font-title);
 }
 
-@media screen and (min-width:768px){
-  .footer{
+@media screen and (min-width:768px) {
+  .footer {
     flex-direction: column;
     gap: 10px;
   }
-  .containerFooter{
+
+  .containerFooter {
     display: flex;
     flex-direction: row;
-    gap:20px ;
+    gap: 20px;
   }
-  .footerTitle{
+
+  .footerTitle {
     flex: 1;
   }
-  .footerList{
+
+  .footerList {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
+
   }
 
-  
+
 }
 
-@media screen and (min-width:1024px){
-  .footer{
+@media screen and (min-width:1024px) {
+  .footer {
     justify-content: center;
     align-items: stretch;
     padding: 40px 48px 20px 48px;
   }
-  .containerFooter{
+
+  .containerFooter {
     width: min(100%, 1100px);
     justify-content: space-between;
     align-items: flex-start;
     gap: 48px;
   }
-  .footerTitle{
+
+  .footerTitle {
     width: 100%;
     max-width: 380px;
   }
-  .textFooter{
+
+  .textFooter {
     margin-right: 0;
     line-height: 1.65;
     max-width: 36ch;
   }
+
   .footerServicios,
-  .footerContact{
+  .footerContact {
     min-width: 220px;
   }
-  .titleSub{
+
+  .titleSub {
     font-size: 15px;
     margin-bottom: 6px;
   }
-  .footerList{
+
+  .footerList {
     margin-top: 12px;
   }
-  .footerListItem{
+
+  .footerListItem {
     line-height: 1.45;
   }
 }

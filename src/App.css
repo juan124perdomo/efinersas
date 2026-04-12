@@ -14,23 +14,7 @@
     font-style: normal;
     font-display: swap;
   }
-:root{
-    /* Color*/
-    --primary: #f9c006;
-    --black-text:#000000;
-    --secundary:#ffffff;
-    --text-gray:#4a505a;
-    --liner-gray:#363636d4;
-    --liner-gray-hover:#585858d4 ;
 
-    /*background*/
-    --bg-light: #ffffff;
-    --bg-dark: #000000;
-
-    /*Font text*/
-    --font-text: "Inter";
-    --font-title:"Montserrat";
-}
 
 .app-shell{
     min-height: 100vh;

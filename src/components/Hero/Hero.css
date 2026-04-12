@@ -1,34 +1,19 @@
 @font-face {
     font-family: 'Montserrat';
     src: url('../../assets/Font/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900; /* Acepta todos los pesos si es variable */
+    font-weight: 100 900;
+    /* Acepta todos los pesos si es variable */
     font-style: normal;
     font-display: swap;
-  }
-  
-  /* --- INTER --- */
-  @font-face {
+}
+
+/* --- INTER --- */
+@font-face {
     font-family: 'Inter';
     src: url('../../assets/Font/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
-  }
-:root{
-    /* Color*/
-    --primary: #f9c006;
-    --black-text:#000000;
-    --secundary:#ffffff;
-    --liner-gray:#363636d4;
-    --liner-gray-hover:#585858d4 ;
-
-    /*background*/
-    --bg-light: #ffffff;
-    --bg-dark: #000000;
-
-    /*Font text*/
-    --font-text: "Inter";
-    --font-title:"Montserrat";
 }
 
 .hero {
@@ -47,7 +32,12 @@
     background-attachment: fixed;
     padding: 2rem 1.5rem;
     font-family: var(--font-title);
+    position: relative;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 150px);
+    mask-image: linear-gradient(to top, transparent 0%, black 150px);
 }
+
+
 
 .hero-content {
     display: flex;
@@ -110,7 +100,7 @@
         min-height: 90vh;
         padding: 5rem 1rem 2rem 1rem;
     }
-    
+
     .hero-content {
         max-width: 95%;
         padding: 0 0.5rem;
@@ -129,17 +119,18 @@
     }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .hero {
         width: 100%;
-       
-        
+
+
         padding: 3.5rem 3rem;
     }
-        .hero-content {
-            max-width: 48rem;
-        }
-    
+
+    .hero-content {
+        max-width: 48rem;
+    }
+
     .hero-title {
         font-size: 3.9rem;
     }
@@ -148,15 +139,18 @@
 @media (min-width: 1440px) {
     .hero {
         width: 100%;
-        
+
         padding: 3.5rem 3rem;
     }
+
     .hero-content {
         max-width: 48rem;
     }
+
     .hero-title {
         font-size: 4rem;
     }
+
     .hero-subtitle {
         margin-bottom: 2.5rem;
     }
@@ -167,6 +161,7 @@
         opacity: 0;
         transform: translateY(1.5rem);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
