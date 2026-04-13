@@ -1,3 +1,4 @@
+/*card de servicios */
 .cardService{
     max-width: 310px;
     min-width: 270px;
@@ -69,3 +70,66 @@
     transform: translateX(4px);
     text-decoration: underline;
 }
+
+/*card de por que elegirnos */
+.cardPorQueElegirnos{
+    max-width: 310px;
+    min-width: 270px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    box-shadow: 0 0 2px 0.2px rgba(0, 0, 0, 0.16);
+    padding: 30px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    background-color: var(--bg-light);
+}
+.cardPorQueElegirnos:hover{
+    transform: translateY(-8px);
+    border: 1px solid var(--primary);
+    box-shadow: 0px 1px 10px 2px #00000017;
+}
+
+.cardPorQueElegirnos:hover .containerIcon {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    transform: scale(1.05);
+}           
+.cardPorQueElegirnosTitle{
+    font-family: var(--font-title);
+    text-transform: capitalize;
+    font-size: 22px;
+    margin: 10px 0;
+}
+.cardPorQueElegirnosText{
+    font-family: var(--font-text);
+    font-size: 14px;
+    line-height: 20px;
+    color:var(--text-gray);
+}
+@media screen and (min-width: 1024px) {
+
+    .cardService{
+    max-width: 360px;
+    }
+
+    .cardPorQueElegirnos{
+    max-width: 430px;}
+    }
+
+@media screen and (min-width: 1140px) {
+    .cardService{
+    max-width: 380px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .cardService{
+    max-width: 310px;
+    }
+}
+
+

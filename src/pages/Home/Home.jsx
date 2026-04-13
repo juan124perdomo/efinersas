@@ -1,10 +1,11 @@
 import { Hero } from "../../components/Hero/Hero"
-import { CardService } from "../../components/Cards/Cards"
+import { CardService, CardPorQueElegirnos } from "../../components/Cards/Cards"
 import hero1 from "../../assets/Img/hero1.jpeg"
 import quienesMovil from "../../assets/Img/quienes somos.png"
 import quienesPC from "../../assets/Img/quienes.jpg"
 import { SEO } from "../../components/SEO/SEO"
-import { FaBolt, FaTools, FaLeaf, FaSolarPanel } from "react-icons/fa";
+import { FaBolt, FaTools, FaLeaf, FaSolarPanel, FaHardHat, FaWhatsapp } from "react-icons/fa";
+import { MdVerified, MdTroubleshoot, MdEnergySavingsLeaf } from "react-icons/md"
 import "./Home.css"
 
 export function Home() {
@@ -86,8 +87,70 @@ export function Home() {
 
       <section className="porQueElegirnos">
         <span className="bagde">Nuestro respaldo técnico</span>
-        <h2 className="porQueElegirnos">¿Por qué elegirnos?</h2>
+        <h2 className="porQueElegirnosTitle">Soluciones eléctricas con respaldo técnico y normativo</h2>
+        <div className="porQueElegirnosContainerCards">
+          <CardPorQueElegirnos
+            icon={<MdVerified />}
+            title="Cumplimiento RETIE"
+            text="Garantizamos que todas nuestras intervenciones cumplen rigurosamente con el Reglamento Técnico de Instalaciones Eléctricas."
+          />
+
+          <CardPorQueElegirnos
+            icon={<FaHardHat />}
+            title="Equipo Certificado"
+            text="Contamos con personal altamente calificado y en constante actualización técnica para cada fase del proyecto."
+          />
+
+          <CardPorQueElegirnos
+            icon={<MdTroubleshoot />}
+            title="Diagnóstico Técnico"
+            text="Realizamos estudios detallados para identificar puntos de mejora y riesgos potenciales en su infraestructura actual."
+          />
+
+          <CardPorQueElegirnos
+            icon={<MdEnergySavingsLeaf />}
+            title="Enfoque Sostenible"
+            text="Integramos tecnologías de energía limpia y sistemas de ahorro para reducir el impacto ambiental y costos operativos."
+          />
+
+
+        </div>
       </section>
+      <section className="cta">
+        <div className="ctaLightningPattern"></div>
+        <div className="ctaGoldenGlow"></div>
+        
+        <div className="ctaContent">
+          <span className="bagde">Hablemos</span>
+          
+          <h2 className="ctaTitle">
+            ¿Listo para llevar tu <span className="ctaHighlight">proyecto eléctrico</span> al siguiente nivel?
+          </h2>
+          
+          <p className="ctaText">
+            Desde grandes infraestructuras industriales hasta instalaciones residenciales — estamos listos para asesorarte sin costo inicial.
+          </p>
+          
+          <div className="ctaActions">
+            <a className="ctaBtnWhatsapp" href="#" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp className="ctaIconWhatsapp" />
+              <span>Escríbenos al WhatsApp</span>
+            </a>
+            
+            <a className="ctaBtnSecondary" href="/servicios">
+              Ver Servicios
+            </a>
+          </div>
+          
+          <p className="ctaTrust">
+            Respuesta inmediata garantizada en horario comercial
+          </p>
+        </div>
+        
+        <div className="ctaOverlayTop"></div>
+        <div className="ctaOverlay"></div>
+      </section>
+
     </>
   )
 }

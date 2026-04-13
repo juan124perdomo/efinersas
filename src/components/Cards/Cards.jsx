@@ -22,15 +22,15 @@ export const CardService = ({icon,title,text,to})=>{
     )
 }
 
-export const CardIdentity= ({icon,title,text})=>{
+export const CardPorQueElegirnos= ({icon,title,text})=>{
     return(
-        <div className="cardService">
+        <div className="cardPorQueElegirnos">
             <div className="containerIcon">
             {icon}
             </div>
-            <div className="serviceContent">
-                <h3 className="serviceTitle">{title}</h3>
-                <p className="serviceText">
+            <div className="cardPorQueElegirnosContent">
+                <h3 className="cardPorQueElegirnosTitle">{title}</h3>
+                <p className="cardPorQueElegirnosText">
                 {text}
                 </p>
             </div>
