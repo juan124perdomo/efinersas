@@ -38,6 +38,52 @@ export const CardPorQueElegirnos= ({icon,title,text})=>{
         </div>
     )
 }
+
+
+export  const  CardStats = ({stat,title})=>{
+    return(
+        <div className="cardStats">
+            <h3 className="cardStatsStat">{stat}</h3>
+            <p className="cardStatsTitle">{title}</p>
+        </div>
+    )
+}
+
+export const CardDiferencia = ({icon,title,text})=>{
+    return(
+        <div className="cardDiferencial">
+            <div className="containerIcon"> 
+            {icon}
+            </div>
+            <div className="cardDiferencialContent">
+                <h3 className="cardDiferencialTitle">{title}</h3>
+                <p className="cardDiferencialText">
+                {text}
+                </p>
+            </div>
+            
+        </div>
+    )
+}
+
+export const CardInfo = ({icon,title,text})=>{
+    return(
+        <div className="cardInfo">
+            <div className="cardInfoContainerIcon">
+            {icon}
+            </div>
+            <div className="cardInfoContent">
+                <h3 className="cardInfoTitle">{title}</h3>
+                <p className="cardInfoText">
+                {text}
+                </p>
+            </div>
+        </div>
+    )
+}
+
+
+
 CardService.propTypes = {
     icon: PropTypes.element.isRequired,
     title:PropTypes.string.isRequired,

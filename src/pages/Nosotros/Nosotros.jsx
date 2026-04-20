@@ -2,8 +2,14 @@ import "./Nosotros.css"
 import { SEO } from "../../components/SEO/SEO"
 import { Hero } from "../../components/Hero/Hero"
 import hero3 from "../../assets/Img/hero3.jpeg"
-import {CardService}from "../../components/Cards/Cards"
-import { FaBullseye,FaEye } from "react-icons/fa";
+import {CardStats, CardDiferencia, CardInfo }from "../../components/Cards/Cards"
+import { 
+  LuMapPin, 
+  LuLayers, 
+  LuHardHat,
+  LuShieldCheck 
+} from "react-icons/lu"
+import { Link } from "react-router-dom";
 
 export function Nosotros() {
   return (
@@ -15,39 +21,127 @@ export function Nosotros() {
       />
       <Hero
         hero={hero3}
-                    title="Ingeniería con"
-                    titleHiglight="experiencia."
-                    subTitle="  Más de 28 años de experiencia en el sector eléctrico, brindando soluciones confiables con altos estándares de calidad y seguridad."
+                    title="Conoce a EFINER"
+                    titleHiglight="nuestra historia."
+                    subTitle=" Una empresa nacida en el campo, 
+           construida con 28 años de experiencia 
+           real en ingeniería eléctrica colombiana."
+        />
+        <section className="sobreNosotros">
+          <div className="sobreNosotrosHeader">
+            <span className="bagde">Quiénes somos</span>
+            <h2 className="sobreNosotrosTitle">La experiencia que tu proyecto necesita</h2>
+
+          </div>
+          <div className="sobreNosotrosContent">
+            <p className="sobreNosotrosText">
+                Somos EFINER S.A.S., una empresa especializada en ingeniería 
+                eléctrica y civil con sede en el Valle del Cauca. Durante más de 
+                28 años hemos desarrollado proyectos de diseño, construcción, 
+                mantenimiento y optimización de sistemas energéticos en zonas 
+                urbanas, rurales y de difícil gestión.
+            </p>
+            <p className="sobreNosotrosText">
+                Nuestra experiencia nos ha permitido trabajar junto a las empresas 
+                más importantes del sector energético colombiano: EPSA/CELSIA, 
+                Compañía Energética de Occidente (CEO), EQUANS CAM Colombia, 
+                Transportadora de Gas Internacional (TGI) y Universidad del Valle, 
+                entre otras.
+            </p>
+            <p className="sobreNosotrosText">
+                Nos diferenciamos por integrar tecnología avanzada — drones, GPS 
+                y sistemas GIS — con conocimiento real de campo, incluyendo 
+                operaciones en zonas de alta complejidad en los departamentos de 
+                Valle del Cauca, Cauca, Tolima, Nariño y Vichada. Todo bajo 
+                cumplimiento estricto de RETIE, NTC y resoluciones de la CREG.
+            </p>
+          </div>
+            <button className="btn btnSobreNosotros"><Link to="/Servicios" className="btnLink"> Ver nuestros servicio</Link></button>
+        </section>
+
+        <section className="sobreNosotrosStasts">
+          <CardStats stat="28+" title="Años de experiencia"/>
+          <CardStats stat="6+" title="Grandes clientes"/>
+          <CardStats stat="4" title="Departamentos atendidos"/>
+          <CardStats stat="24/7" title="Atención a emergencias"/>
+        </section>
+
+        <section className="sobreNosotrosNuestraDiferencia">
+          <div className="sobreNosotrosNuestraDiferenciaHeader">
+            <span className="bagde">Nuestra ventaja</span>
+            <h2 className="sobreNosotrosNuestraDiferenciaTitle">Qué nos diferencia</h2>
+          </div>
+          <div className="sobreNosotrosNuestraDiferenciaContent">
+              
+
+        <CardInfo
+          icon={<LuMapPin />}
+          title="Zonas de difícil gestión"
+          text="Operamos en zonas rurales y de difícil acceso en 
+          Valle del Cauca, Cauca, Tolima, Nariño y Vichada."
         />
 
-      <section className="IdentityContainer">
-        <div className="identity">
-          <h2 className="identityTitle">Nuestra Esencia</h2>
-          <p className="identityText">
-            Somos una empresa con más de 28 años de experiencia en el sector eléctrico, 
-            especializada en soluciones integrales para redes, subestaciones y eficiencia energética.
-            Ejecutamos proyectos en entornos complejos garantizando seguridad, cumplimiento normativo
-            y optimización de costos.
-          </p>
-          
-        </div>
-        <div className="containerCardsIdentity">
-            <CardService
-                      icon={<FaBullseye />}
-                      title="Mision"
-                      text="Brindar soluciones integrales en ingeniería eléctrica y civil, enfocadas en el diseño, construcción, mantenimiento y optimización de sistemas energéticos, garantizando altos estándares de calidad, seguridad y eficiencia para nuestros clientes."
-                      
-                    />
-            <CardService
-                      icon={<FaEye/>}
-                      title="Vision"
-                      text="Ser una empresa líder a nivel nacional en el sector eléctrico, reconocida por nuestra experiencia técnica, innovación en soluciones energéticas y capacidad para desarrollar proyectos en zonas de alta complejidad operativa y social."
-                    
-                    />
-        </div>
+        <CardInfo
+          icon={<LuLayers />}
+          title="Tecnología avanzada"
+          text="Pilotos electricistas certificados para inspección 
+          con drones, ortofotografía y GPS bajo Res 038 y 015."
+        />
 
-      </section>
+        <CardInfo
+          icon={<LuHardHat />}
+          title="Personal capacitado"
+          text="Equipo en constante formación técnica en redes 
+          energizadas, riesgo eléctrico y normativas del sector."
+        />
+
+        <CardInfo
+          icon={<LuShieldCheck />}
+          title="Cumplimiento normativo"
+          text="Todos los proyectos cumplen RETIE, NTC y resoluciones 
+          de la CREG, garantizando calidad en cada entrega."
+        />
+
+          </div>
+        </section>
+
+        <section className="misionYVision">
+          <div className="misionYVisionHeader">
+            <span className="bagde">Misión y visión</span>
+            <h2 className="misionYVisionTitle">Nuestro propósito</h2>
+          </div>
+          <div className="misionYVisionContent">
+            <div className="cardMision">
+              <span className="labelMision">Misión</span>
+              <h3 className="cardMisionTitle">Compromiso con cada proyecto</h3>
+              <p className="cardMisionText">
+                Somos una empresa confiable con excelentes recursos 
+                  de ingeniería y amplia experiencia en campo, enfocada 
+                  en generar seguridad, competitividad y productividad, 
+                  ofreciendo calidad en todos los procesos del sector 
+                  eléctrico y civil que nuestros clientes requieran.
+                </p>
+            </div>
+
+            <div className="cardVision">
+              <span className="labelVision">Visión</span>
+              <h3 className="cardVisionTitle">Referentes en ingeniería eléctrica</h3>
+              <p className="cardVisionText">
+                Ser la empresa referente en ingeniería eléctrica 
+                  y civil a nivel nacional, liderando proyectos de 
+                  alta complejidad con tecnología avanzada, talento 
+                  humano especializado y un compromiso permanente 
+                  con la eficiencia energética y el desarrollo 
+                  integral de nuestros clientes.
+              </p>
+            </div>
+
+          </div>
+        </section>
         
+
+
+
                   </>
                   )
 }

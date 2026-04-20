@@ -111,6 +111,112 @@
     line-height: 20px;
     color:var(--text-gray);
 }
+
+/**card de stats */
+.cardStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #111;
+    border: 1px solid rgba(54,54,54,.83);
+    border-radius: 15px;
+    padding-block: 20PX;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cardStatsStat{
+    font-family: var(--font-title);
+    font-size: 28px;
+    color: var(--primary);
+}
+.cardStatsTitle{
+    font-family: var(--font-text);
+    font-size: 12px;
+    color: var(--text-gray);
+}
+.cardStats:hover{
+    transform: translateY(-8px);
+    border: 1px solid var(--primary);
+    box-shadow: 0px 1px 10px 2px #00000017;
+}
+
+/**card de informacion */
+
+.cardInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    background-color: #111;
+    border: 1px solid rgba(54,54,54,.83);
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: start;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardInfo:hover{
+    transform: translateY(-8px);
+    border: 1px solid var(--primary);
+    box-shadow: 0px 1px 10px 2px #00000017;
+}
+
+.cardInfoContainerIcon{
+    display: flex;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    font-size: 20px;
+    color: var(--primary);
+    background-color: #222222;
+    transition: all 0.3s ease;
+}
+
+.cardInfo:hover .cardInfoContainerIcon {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    transform: scale(1.05);
+}
+
+.cardInfoContent{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+}
+
+.cardInfoTitle{
+    font-family: var(--font-title);
+    text-transform: capitalize;
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.cardInfoText{
+    font-family: var(--font-text);
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--text-gray);
+}
+
+
+@media screen and (min-width: 768px) {
+    
+.cardStats{
+    width: 80%;
+}
+}
+
 @media screen and (min-width: 1024px) {
 
     .cardService{
@@ -129,6 +235,9 @@
 @media screen and (min-width: 1200px) {
     .cardService{
     max-width: 310px;
+    }
+    .cardInfo{
+    width: 300px;
     }
 }
 

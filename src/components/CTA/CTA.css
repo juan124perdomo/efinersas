@@ -1,0 +1,169 @@
+/* src/components/CTA/CTA.css */
+
+.cta {
+    position: relative;
+    width: 100%;
+    min-height: 819px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6rem 1.5rem;
+}
+
+.ctaLightningPattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L10 40H25L15 80L55 30H35L45 0H30Z' fill='%23f5a800' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.ctaGoldenGlow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, rgba(245, 168, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.ctaContent {
+    position: relative;
+    z-index: 1;
+    max-width: 56rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.ctaTitle {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+    margin: 0;
+}
+
+.ctaHighlight {
+    color: #f9c006;
+}
+
+.ctaText {
+    font-family: var(--font-text);
+    color: #888888;
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    max-width: 500px;
+    line-height: 1.625;
+    margin: 0;
+}
+
+.ctaActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.ctaBtnWhatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: #25D366;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: var(--font-text);
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+.ctaBtnWhatsapp:hover {
+    filter: brightness(1.1);
+}
+
+.ctaBtnWhatsapp:active {
+    transform: scale(0.95);
+}
+
+.ctaIconWhatsapp {
+    font-size: 1.5rem;
+}
+
+.ctaBtnSecondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    border: 2px solid #f9c006;
+    color: #f9c006;
+    font-weight: 700;
+    font-family: var(--font-text);
+    width: 100%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.ctaBtnSecondary:hover {
+    background-color: rgba(249, 192, 6, 0.1);
+}
+
+.ctaBtnSecondary:active {
+    transform: scale(0.95);
+}
+
+.ctaTrust {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-top: 1rem;
+    margin: 0;
+    font-family: var(--font-text);
+}
+
+.ctaOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.ctaOverlayTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    background: linear-gradient(to bottom, var(--bg-dark), transparent);
+    opacity: 1;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .ctaActions {
+        flex-direction: row;
+        width: auto;
+    }
+    .ctaBtnWhatsapp, .ctaBtnSecondary {
+        width: auto;
+    }
+}

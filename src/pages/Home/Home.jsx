@@ -7,6 +7,8 @@ import { SEO } from "../../components/SEO/SEO"
 import { FaBolt, FaTools, FaLeaf, FaSolarPanel, FaHardHat, FaWhatsapp } from "react-icons/fa";
 import { MdVerified, MdTroubleshoot, MdEnergySavingsLeaf } from "react-icons/md"
 import "./Home.css"
+import { Link } from "react-router-dom";
+
 
 export function Home() {
   return (
@@ -22,27 +24,26 @@ export function Home() {
         subTitle="Diseñamos, construimos y optimizamos redes eléctricas, subestaciones y sistemas de medición con soluciones innovadoras y seguras."
       />
 
-      <section className="quienesSomos">
-        <div className="textContainer">
+      <section className="pageHomeQuienesSomos">
+        <div className="pageHomeQuienesSomosTextContainer">
           <span className="bagde">Nuestra trayectoria</span>
-          <h2 className="quienesTitle">Quienes somos</h2>
-          <p className="quienesText">
-            Somos una empresa confiable con excelentes recursos de ingeniería Y
-            de gran Experiencia personal con un enfoque en la generación de
-            seguridad, competitividad y productividad, ofreciendo calidad en
-            todos y cada uno de los procesos del Sector eléctrico y civil que
-            nuestros Clientes requieran
+          <h2 className="pageHomeQuienesTitle">Quienes somos</h2>
+          <p className="pageHomeQuienesText">
+            Somos una empresa de ingeniería eléctrica y civil con más de 28 años 
+            de experiencia, enfocada en generar seguridad, competitividad y 
+            productividad en cada proyecto que emprendemos.
           </p>
 
-          <p className="quienesText">
-            Ofrecemos a nuestros clientes una ventaja diferencial de un trabajo
-            que involucra practica y capacitación constante, logrando así un
-            resultado profesional más identificado con nuestra empresa,
-            nuestros clientes y en permanente desarrollo integral.
+          <p className="pageHomeQuienesText">
+            Ofrecemos a nuestros clientes una ventaja diferencial: práctica 
+            constante, capacitación permanente y un equipo comprometido con 
+            resultados de alta calidad en el sector eléctrico y civil.
           </p>
+          <button className="btn btnConocenos"><Link to="/Nosotros" className="btnLink">Conocenos</Link></button>
         </div>
 
-        <div className="quienesImage">
+
+        <div className="pageHomeQuienesImage">
           <picture>
             <source srcSet={quienesMovil} media="(max-width: 767px)" />
             <source srcSet={quienesPC} media="(min-width: 768px)" />

@@ -1,28 +1,33 @@
-.quienesSomos {
+.pageHomeQuienesSomos{
     margin: -100px 0 30px;
     padding: 140px 1px 50px;
     position: relative;
     z-index: 2;
 }
 
-.textContainer {
+.pageHomeQuienesSomosTextContainer{
     margin: 20px 15px 0;
     box-sizing: border-box;
-}
-
-
-.quienesImage {
-    position: relative;
-    top: -50px;
-    z-index: -1;
-}
-
-.quienesImage picture {
     border: none;
 }
 
 
-.quienesImage::after {
+.pageHomeQuienesImage {
+    position: relative;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.pageHomeQuienesImage picture {
+    border: none;
+    display: block;
+    width: 100%;
+}
+
+.pageHomeQuienesImage::after {
+    border: none;
     content: "";
     position: absolute;
     inset: 0;
@@ -31,7 +36,7 @@
             rgba(10, 10, 10, 0) 80%);
 }
 
-.quienesImage img {
+.pageHomeQuienesImage img {
     width: 100%;
     display: block;
     object-fit: cover;
@@ -51,7 +56,7 @@
     font-weight: 600;
 }
 
-.quienesTitle {
+.pageHomeQuienesTitle {
     font-family: var(--font-title);
     font-size: 1.7rem;
     margin: 16px 0;
@@ -59,7 +64,7 @@
 
 
 
-.quienesText {
+.pageHomeQuienesText{
     font-family: var(--font-text);
     text-wrap: pretty;
     margin: 10px 0;
@@ -111,7 +116,6 @@
 .porQueElegirnosTitle {
     font-family: var(--font-title);
     font-size: clamp(1.9rem, 4vw, 2.6rem);
-    /* Escala entre 1.6rem en móvil y 2.5rem en desktop */
     font-size: clamp(1.6rem, 5vw, 2.5rem);
     font-weight: 800;
     line-height: 1.25;
@@ -133,113 +137,6 @@
     flex-flow: column nowrap;
     margin: 50px 0;
     gap: 20px;
-}
-
-@media screen and (min-width: 768px) {
-    .quienesSomos {
-        position: relative;
-        margin: -150px 0 0px;
-        padding: 200px 40px 50px;
-        overflow: hidden;
-        min-height: 500px;
-        z-index: 2;
-    }
-
-    .quienesSomos::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-            /* Oscurece el fondo abajo para la siguiente seccion */
-            linear-gradient(to top,
-                rgb(10, 10, 10) 5%,
-                rgba(10, 10, 10, 0) 30%);
-        pointer-events: none;
-    }
-
-
-    .textContainer {
-        position: relative;
-        z-index: 1;
-        max-width: 55%;
-    }
-
-
-    .quienesImage {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 200px);
-        mask-image: linear-gradient(to bottom, transparent 0%, black 200px);
-    }
-
-    .quienesImage picture {
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    .quienesImage img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: right center;
-        max-height: none;
-        /* ← cancela el max-height: 400px de mobile */
-    }
-
-    .quienesImage::after {
-        background: linear-gradient(to right,
-                rgba(10, 10, 10, 0.92) 0%,
-                rgba(10, 10, 10, 0.6) 35%,
-                rgba(10, 10, 10, 0) 70%);
-    }
-
-    .serviciosContainer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .porQueElegirnosTitle {
-        font-size: clamp(2.2rem, 3.2vw, 2.9rem);
-        max-width: 760px;
-    }
-
-    .porQueElegirnosContainerCards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (min-width: 1024px) {
-    .quienesSomos {
-        padding: 200px 80px 50px;
-    }
-
-    .textContainer {
-        max-width: 65%;
-    }
-
-    .quienesImage::after {
-        background: linear-gradient(to right,
-                rgba(10, 10, 10, 0.92) 0%,
-                rgba(10, 10, 10, 0.6) 25%,
-                rgba(10, 10, 10, 0) 60%);
-    }
-
-    .serviciosContainer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .porQueElegirnosTitle {
-        font-size: 2.4rem;
-        max-width: 700px;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .serviciosContainer {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 /* ==========================================================================
@@ -404,7 +301,87 @@
     pointer-events: none;
 }
 
-@media (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
+    .pageHomeQuienesSomos{
+        position: relative;
+        margin: -150px 0 0px;
+        padding: 200px 40px 50px;
+        overflow: hidden;
+        min-height: 500px;
+        z-index: 2;
+    }
+
+    .pageHomeQuienesSomos::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            /* Oscurece el fondo abajo para la siguiente seccion */
+            linear-gradient(to top,
+                rgb(10, 10, 10) 5%,
+                rgba(10, 10, 10, 0) 30%);
+        pointer-events: none;
+    }
+
+
+    .pageHomeQuienesSomosTextContainer {
+        position: relative;
+        z-index: 1;
+        max-width: 55%;
+    }
+
+
+    .pageHomeQuienesImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 200px);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 200px);
+    }
+
+    .pageHomeQuienesImage picture {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .pageHomeQuienesImage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right center;
+        max-height: none;
+        /* ← cancela el max-height: 400px de mobile */
+    }
+
+    .pageHomeQuienesImage::after {
+        background: linear-gradient(to right,
+                rgba(10, 10, 10, 0.92) 0%,
+                rgba(10, 10, 10, 0.6) 35%,
+                rgba(10, 10, 10, 0) 70%);
+    }
+
+    .btnConocenos{
+        margin-block: 20px;
+    }
+
+
+    .serviciosContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .porQueElegirnosTitle {
+        font-size: clamp(2.2rem, 3.2vw, 2.9rem);
+        max-width: 760px;
+    }
+
+    .porQueElegirnosContainerCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .ctaActions {
         flex-direction: row;
         width: auto;
@@ -412,4 +389,36 @@
     .ctaBtnWhatsapp, .ctaBtnSecondary {
         width: auto;
     }
-}
+}
+@media screen and (min-width: 1024px) {
+    .pageHomeQuienesSomos {
+        padding: 200px 80px 50px 60px;
+    }
+
+    .pageHomeQuienesSomosTextContainer {
+        max-width: 65%;
+    }
+
+    .pageHomeQuienesImage::after {
+        background: linear-gradient(to right,
+                rgba(10, 10, 10, 0.92) 0%,
+                rgba(10, 10, 10, 0.6) 25%,
+                rgba(10, 10, 10, 0) 60%);
+    }
+
+    .serviciosContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .porQueElegirnosTitle {
+        font-size: 2.4rem;
+        max-width: 700px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .serviciosContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+

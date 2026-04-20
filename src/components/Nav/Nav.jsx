@@ -41,7 +41,7 @@ export const Navbar = () => {
   return (
     <header className="header">
       <h3 className="title">
-        EFINER<span className="titleStrong">S.A.S.</span>
+        EFINER <span className="titleStrong">S.A.S.</span>
       </h3>
 
       <nav className="nav">
