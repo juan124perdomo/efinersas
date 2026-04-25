@@ -2,12 +2,17 @@ import "./Nosotros.css"
 import { SEO } from "../../components/SEO/SEO"
 import { Hero } from "../../components/Hero/Hero"
 import hero3 from "../../assets/Img/hero3.jpeg"
-import {CardStats, CardDiferencia, CardInfo }from "../../components/Cards/Cards"
+import {CardStats, CardDiferencia, CardInfo, CardsValores }from "../../components/Cards/Cards"
 import { 
   LuMapPin, 
   LuLayers, 
   LuHardHat,
-  LuShieldCheck 
+  LuShieldCheck,    // Seguridad
+  LuCircleCheck,    // Calidad
+  LuUsers,          // Compromiso
+  LuLightbulb,      // Innovación
+  LuActivity,       // Responsabilidad
+  LuHouse  
 } from "react-icons/lu"
 import { Link } from "react-router-dom";
 
@@ -56,7 +61,7 @@ export function Nosotros() {
                 cumplimiento estricto de RETIE, NTC y resoluciones de la CREG.
             </p>
           </div>
-            <button className="btn btnSobreNosotros"><Link to="/Servicios" className="btnLink"> Ver nuestros servicio</Link></button>
+            <Link to="/Servicios" className="btn btnSobreNosotros">Ver nuestros servicios</Link>
         </section>
 
         <section className="sobreNosotrosStasts">
@@ -138,10 +143,61 @@ export function Nosotros() {
 
           </div>
         </section>
+
+        <section className="nuestrosValores">
+          <div className="nuestrosValoresHeader">
+            <span className="bagde">Lo que nos define</span>
+            <h2 className="nuestrosValoresTitle">Nuestros valores</h2>
+          </div>
+          <div className="nuestrosValoresContent">
+
+          <CardsValores
+            icon={<LuShieldCheck />}
+            title="Seguridad"
+            text="Protocolos estrictos en cada operación para proteger a nuestro equipo y clientes."
+          />
+          <CardsValores
+            icon={<LuCircleCheck />}
+            title="Calidad"
+            text="Cumplimos los estándares técnicos del operador de red y la normativa vigente."
+          />
+          <CardsValores
+            icon={<LuUsers />}
+            title="Compromiso"
+            text="Asumimos cada proyecto como propio, trabajando con dedicación hasta la entrega."
+          />
+          <CardsValores
+            icon={<LuLightbulb />}
+            title="Innovación"
+            text="Drones, GPS y GIS para optimizar tiempos y reducir costos en campo."
+          />
+          <CardsValores
+            icon={<LuActivity />}
+            title="Responsabilidad"
+            text="Entregamos en los tiempos y condiciones acordadas, sin excusas."
+          />
+          <CardsValores
+            icon={<LuHouse />}
+            title="Trabajo social"
+            text="Impacto real en comunidades rurales y zonas de difícil gestión."
+          />
+            
+
+
+
+
+
+          </div>
+        </section>
         
+        <section className="nuestrasCapacidades">
+          <div className="nuestrasCapacidadesHeader">
+            <span className="bagde">Nuestras capacidades</span>
+            <h2 className="nuestrasCapacidadesTitle">Capacidades técnicas</h2>
+          </div>
+          <div className="nuestrasCapacidadesContent"></div>
+        </section>
 
-
-
-                  </>
+    </>
                   )
 }

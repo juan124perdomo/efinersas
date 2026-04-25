@@ -133,7 +133,7 @@ export function Home() {
           </p>
           
           <div className="ctaActions">
-            <a className="ctaBtnWhatsapp" href="#" target="_blank" rel="noopener noreferrer">
+            <a className="ctaBtnWhatsapp" href="https://wa.me/3122932695" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp className="ctaIconWhatsapp" />
               <span>Escríbenos al WhatsApp</span>
             </a>

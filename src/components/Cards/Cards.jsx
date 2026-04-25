@@ -83,6 +83,21 @@ export const CardInfo = ({icon,title,text})=>{
 }
 
 
+export const CardsValores = ({icon,title,text})=>{
+    return(
+        <div className="cardValores">
+            <div className="cardValoresContainerIcon">
+            {icon}
+            </div>
+            <div className="cardValoresContent">
+                <h3 className="cardValoresTitle">{title}</h3>
+                <p className="cardValoresText">
+                {text}
+                </p>
+            </div>
+        </div>
+    )
+}
 
 CardService.propTypes = {
     icon: PropTypes.element.isRequired,
