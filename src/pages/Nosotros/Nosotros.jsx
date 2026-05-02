@@ -2,17 +2,23 @@ import "./Nosotros.css"
 import { SEO } from "../../components/SEO/SEO"
 import { Hero } from "../../components/Hero/Hero"
 import hero3 from "../../assets/Img/hero3.jpeg"
-import {CardStats, CardDiferencia, CardInfo, CardsValores }from "../../components/Cards/Cards"
+import {CardStats, CardInfo, CardsValores, CardCapacidades, CardEmpresasaQueConfianEnNosotros }from "../../components/Cards/Cards"
 import { 
   LuMapPin, 
   LuLayers, 
   LuHardHat,
-  LuShieldCheck,    // Seguridad
-  LuCircleCheck,    // Calidad
-  LuUsers,          // Compromiso
-  LuLightbulb,      // Innovación
-  LuActivity,       // Responsabilidad
-  LuHouse  
+  LuShieldCheck,    
+  LuCircleCheck,    
+  LuUsers,          
+  LuLightbulb,      
+  LuActivity,      
+  LuZap,          
+  LuBuilding2,    
+  LuSun,         
+  LuNavigation,   
+  LuChartNoAxesColumn,    
+  LuBookOpen,
+  LuHouse    
 } from "react-icons/lu"
 import { Link } from "react-router-dom";
 
@@ -195,9 +201,72 @@ export function Nosotros() {
             <span className="bagde">Nuestras capacidades</span>
             <h2 className="nuestrasCapacidadesTitle">Capacidades técnicas</h2>
           </div>
-          <div className="nuestrasCapacidadesContent"></div>
+          <div className="nuestrasCapacidadesContent">
+            <CardCapacidades
+              icon={<LuZap />}
+              title="Redes MT/BT"
+              text="Diseño, construcción y mantenimiento de redes eléctricas de media y baja tensión."
+            />
+            <CardCapacidades
+              icon={<LuBuilding2 />}
+              title="Subestaciones"
+              text="Montaje y calibración de protecciones en media tensión, incluyendo trabajos en caliente."
+            />
+            <CardCapacidades
+              icon={<LuSun />}
+              title="Energía solar"
+              text="Diseño e instalación de sistemas fotovoltaicos para zonas conectadas y ZNI."
+            />
+            <CardCapacidades
+              icon={<LuNavigation />}
+              title="GIS y drones"
+              text="Levantamientos georreferenciados, ortofotografía e inventarios bajo Res 038 y 015."
+            />
+            <CardCapacidades
+              icon={<LuChartNoAxesColumn />}
+              title="Mediciones eléctricas"
+              text="Instalación y mantenimiento de sistemas de medición industrial y macromedición."
+            />
+            <CardCapacidades
+              icon={<LuBookOpen />}
+              title="Capacitación"
+              text="Formación técnica en riesgo eléctrico, redes energizadas y normativas RETIE/NTC."
+            />
+          </div>
         </section>
 
+        <section className="empresasQueConfianEnNosotros">
+          <div className="empresasQueConfianEnNosotrosHeader">
+            <span className="bagde">Empresas que confían en nosotros</span>
+            <h2 className="empresasQueConfianEnNosotrosTitle">Nuestros clientes</h2>
+          </div>
+          <div className="empresasQueConfianEnNosotrosContent">
+            <CardEmpresasaQueConfianEnNosotros
+              name="EPSA / CELSIA"
+              text="Operador de red · Valle del Cauca"
+            />
+            <CardEmpresasaQueConfianEnNosotros
+              name="CEO"
+              text="Compañía Energética de Occidente"
+            />
+            <CardEmpresasaQueConfianEnNosotros
+              name="EQUANS"
+              text="CAM Colombia · Servicios energéticos"
+            />
+            <CardEmpresasaQueConfianEnNosotros
+              name="TGI"
+              text="Transportadora de Gas Internacional"
+            />
+            <CardEmpresasaQueConfianEnNosotros
+              name="ING CONS S.A.S."
+              text="Ingeniería y construcción"
+            />
+            <CardEmpresasaQueConfianEnNosotros
+              name="Universidad del Valle"
+              text="Educación · Sector público"
+            />
+          </div>
+        </section>
     </>
                   )
 }

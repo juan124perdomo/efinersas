@@ -230,8 +230,12 @@
 
     .contactos {
         background-color: var(--primary);
-        color: var(--bg-black);
+        color: white;
         border-radius: 8px;
+    }
+
+    .contactos .navLink.active {
+        color: white;
     }
 
     li:nth-child(5n) {

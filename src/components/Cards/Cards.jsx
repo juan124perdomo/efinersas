@@ -49,22 +49,6 @@ export  const  CardStats = ({stat,title})=>{
     )
 }
 
-export const CardDiferencia = ({icon,title,text})=>{
-    return(
-        <div className="cardDiferencial">
-            <div className="containerIcon"> 
-            {icon}
-            </div>
-            <div className="cardDiferencialContent">
-                <h3 className="cardDiferencialTitle">{title}</h3>
-                <p className="cardDiferencialText">
-                {text}
-                </p>
-            </div>
-            
-        </div>
-    )
-}
 
 export const CardInfo = ({icon,title,text})=>{
     return(
@@ -95,6 +79,31 @@ export const CardsValores = ({icon,title,text})=>{
                 {text}
                 </p>
             </div>
+        </div>
+    )
+}
+
+export const CardCapacidades = ({icon,title,text})=>{
+    return(
+        <div className="cardCapacidades">
+            <div className="cardCapacidadesContainerIcon">
+            {icon}
+            </div>
+            <div className="cardCapacidadesContent">
+                <h3 className="cardCapacidadesTitle">{title}</h3>
+                <p className="cardCapacidadesText">
+                {text}
+                </p>
+            </div>
+        </div>
+    )
+}
+
+export  const  CardEmpresasaQueConfianEnNosotros = ({name,text})=>{
+    return(
+        <div className="cardEmpresasaQueConfianEnNosotros">
+            <h3 className="cardempresasaQueConfianEnNosotrosTitle">{name}</h3>
+            <p className="cardempresasaQueConfianEnNosotrosText">{text}</p>
         </div>
     )
 }
