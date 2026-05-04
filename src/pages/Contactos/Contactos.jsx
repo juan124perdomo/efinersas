@@ -103,6 +103,30 @@ export function Contactos() {
         />
       </section>
 
+       {/* COVERAGE + CONFIDENCE */}
+      <section className="coverage-section">
+        <div className="coverage-left">
+          <h3>Municipios de cobertura</h3>
+          <div className="pills">
+            {["Palmira", "Cali", "Buga", "Tuluá", "Buenaventura", "Jamundí", "Pradera", "Florida", "Zarzal", "Dagua", "Roldanillo", "La Unión", "Versalles", "Sevilla", "Trujillo"].map(city => (
+              <span key={city} className="pill">{city}</span>
+            ))}
+          </div>
+          <p className="note">También: Cauca · Tolima · Nariño · Vichada</p>
+        </div>
+        
+        <div className="coverage-right">
+          <h3>Por qué confiar en nosotros</h3>
+          <ul className="confidence-list">
+            <li><FaCheckCircle className="check-icon" /> 28 años de experiencia en el sector eléctrico colombiano</li>
+            <li><FaCheckCircle className="check-icon" /> Proyectos con EPSA CELSIA, EQUANS CAM, TGI y U. del Valle</li>
+            <li><FaCheckCircle className="check-icon" /> Atención en zonas urbanas, rurales y de difícil acceso</li>
+            <li><FaCheckCircle className="check-icon" /> Personal certificado RETIE con equipos especializados</li>
+          </ul>
+        </div>
+      </section>
+
+
       {/* FORM + SIDEBAR */}
       <section className="form-section">
         <div className="form-container">
@@ -218,27 +242,7 @@ export function Contactos() {
         </aside>
       </section>
 
-      {/* COVERAGE + CONFIDENCE */}
-      <section className="coverage-section">
-        <div className="coverage-left">
-          <h3>Municipios de cobertura</h3>
-          <div className="pills">
-            {["Palmira", "Cali", "Buga", "Tuluá", "Buenaventura", "Jamundí", "Pradera", "Florida", "Zarzal", "Dagua", "Roldanillo", "La Unión", "Versalles", "Sevilla", "Trujillo"].map(city => (
-              <span key={city} className="pill">{city}</span>
-            ))}
-          </div>
-          <p className="note">También: Cauca · Tolima · Nariño · Vichada</p>
-        </div>
-        <div className="coverage-right">
-          <h3>Por qué confiar en nosotros</h3>
-          <ul className="confidence-list">
-            <li><FaCheckCircle className="check-icon" /> 28 años de experiencia en el sector eléctrico colombiano</li>
-            <li><FaCheckCircle className="check-icon" /> Proyectos con EPSA CELSIA, EQUANS CAM, TGI y U. del Valle</li>
-            <li><FaCheckCircle className="check-icon" /> Atención en zonas urbanas, rurales y de difícil acceso</li>
-            <li><FaCheckCircle className="check-icon" /> Personal certificado RETIE con equipos especializados</li>
-          </ul>
-        </div>
-      </section>
+     
 
       {/* FINAL CTA */}
       <CTA />
