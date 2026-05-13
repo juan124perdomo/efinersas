@@ -224,6 +224,30 @@
   margin-top: 0.2rem;
 }
 
+.form-error {
+  color: #f87171;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.success-message {
+  background: rgba(249, 192, 6, 0.08);
+  border: 1px solid rgba(249, 192, 6, 0.25);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.success-message h2 {
+  font-family: var(--font-title);
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.success-message p {
+  color: var(--text-gray);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .contact-cards {

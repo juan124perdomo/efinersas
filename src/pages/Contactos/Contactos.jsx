@@ -4,8 +4,11 @@ import { SEO } from "../../components/SEO/SEO";
 import { Hero } from "../../components/Hero/Hero";
 import { CTA } from "../../components/CTA/CTA";
 import { CardInfo } from "../../components/Cards/Cards";
-import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaCheckCircle } from "react-icons/fa";
-import heroImg from "../../assets/Img/hero2.jpeg"; 
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaCheckCircle } from "react-icons/fa";
+import heroImg from "../../assets/Img/hero2.jpeg";
+
+// Eliminada la dependencia de EmailJS para usar backend propio
+// import emailjs from "@emailjs/browser";
 
 export function Contactos() {
   const [formData, setFormData] = useState({
@@ -15,33 +18,90 @@ export function Contactos() {
     telefono: "",
     tipoServicio: "",
     descripcion: "",
+    urgente: false,
+    _honeypot: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({ 
+      ...prev, 
+      [name]: type === "checkbox" ? checked : value 
+    }));
   };
 
   const validate = () => {
     const newErrors = {};
     if (!formData.nombre.trim()) newErrors.nombre = "Nombre es obligatorio";
-    if (!formData.email.trim()) newErrors.email = "Email es obligatorio";
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = "Email es obligatorio";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Ingrese un email válido";
+    }
+    
     if (!formData.tipoServicio) newErrors.tipoServicio = "Seleccione un tipo de servicio";
     if (!formData.descripcion.trim()) newErrors.descripcion = "Descripción es obligatoria";
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (sending) return; // Evitar doble envío
+    
     const validation = validate();
     if (Object.keys(validation).length) {
       setErrors(validation);
       return;
     }
+
     setErrors({});
-    setSubmitted(true);
+    setSendError("");
+    setSending(true);
+
+    try {
+      // Enviar datos al backend PHP usando fetch
+      // Al compilar, /send-email.php estará en la raíz del dominio
+      const response = await fetch("/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || "Error al enviar el email. Intente nuevamente.");
+      }
+
+      setSubmitted(true);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+      setFormData({
+        nombre: "",
+        empresa: "",
+        email: "",
+        telefono: "",
+        tipoServicio: "",
+        descripcion: "",
+        urgente: false,
+        _honeypot: "",
+      });
+    } catch (error) {
+      setSendError(error.message || "Error de conexión al enviar el formulario.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -74,7 +134,7 @@ export function Contactos() {
           <p className="stat-label">Atención de emergencias</p>
         </div>
         <div className="trust-item">
-          <h2 className="stat-number">&lt;24h</h2>
+          <h2 className="stat-number">24h</h2>
           <p className="stat-label">Tiempo de respuesta</p>
         </div>
       </section>
@@ -82,8 +142,8 @@ export function Contactos() {
       {/* CONTACT CARDS */}
       <section className="contact-cards">
         <CardInfo
-          icon={<FaPhoneAlt />}
-          title="Teléfono / WhatsApp"
+          icon={<FaWhatsapp />}
+          title="WhatsApp / Teléfono"
           text="312 293 2695"
         />
         <CardInfo
@@ -137,6 +197,17 @@ export function Contactos() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
+              {/* Campo Honeypot para evitar spam (oculto) */}
+              <input 
+                type="text" 
+                name="_honeypot" 
+                style={{ display: "none" }} 
+                value={formData._honeypot} 
+                onChange={handleChange} 
+                tabIndex="-1" 
+                autoComplete="off" 
+              />
+              
               <div className="form-group">
                 <label htmlFor="nombre">Nombre completo *</label>
                 <input
@@ -192,17 +263,17 @@ export function Contactos() {
                   onChange={handleChange}
                 >
                   <option value="">Seleccione un servicio...</option>
-                  <option>Redes eléctricas MT/BT</option>
-                  <option>Subestaciones eléctricas</option>
-                  <option>Energía solar fotovoltaica (ZNI)</option>
-                  <option>Mantenimiento preventivo y correctivo</option>
-                  <option>Mediciones industriales (RETIE/NTC)</option>
-                  <option>Levantamientos GIS / Georreferenciación</option>
-                  <option>Inspección con drones</option>
-                  <option>Recuperación de pérdidas de energía</option>
-                  <option>Capacitación eléctrica</option>
-                  <option>Socialización zonas difícil gestión</option>
-                  <option>Otro</option>
+                  <option value="redes-mt-bt">Redes eléctricas MT/BT</option>
+                  <option value="subestaciones-electricas">Subestaciones eléctricas</option>
+                  <option value="energia-solar-fotovoltaica-zni">Energía solar fotovoltaica (ZNI)</option>
+                  <option value="mantenimiento-preventivo-correctivo">Mantenimiento preventivo y correctivo</option>
+                  <option value="mediciones-industriales-retie-ntc">Mediciones industriales (RETIE/NTC)</option>
+                  <option value="levantamientos-gis-georreferenciacion">Levantamientos GIS / Georreferenciación</option>
+                  <option value="inspeccion-drones">Inspección con drones</option>
+                  <option value="recuperacion-perdidas-energia">Recuperación de pérdidas de energía</option>
+                  <option value="capacitacion-electrica">Capacitación eléctrica</option>
+                  <option value="socializacion-zonas-dificil-gestion">Socialización zonas difícil gestión</option>
+                  <option value="otro">Otro</option>
                 </select>
                 {errors.tipoServicio && <span className="error">{errors.tipoServicio}</span>}
               </div>
@@ -218,8 +289,26 @@ export function Contactos() {
                 />
                 {errors.descripcion && <span className="error">{errors.descripcion}</span>}
               </div>
-              <button type="submit" className="btn">
-                <span className="btnLink">Solicitar asesoría</span>
+              
+              <div className="form-group checkbox-group" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+                <input
+                  type="checkbox"
+                  id="urgente"
+                  name="urgente"
+                  checked={formData.urgente}
+                  onChange={handleChange}
+                  style={{ width: 'auto', padding: '0' }}
+                />
+                <label htmlFor="urgente" style={{ marginBottom: '0', color: 'var(--primary)', fontWeight: 'bold' }}>
+                  ¿Es una emergencia / requerimiento urgente?
+                </label>
+              </div>
+
+              {sendError && <p className="form-error">{sendError}</p>}
+              <button type="submit" className="btn" disabled={sending}>
+                <span className="btnLink">
+                  {sending ? "Enviando..." : "Solicitar asesoría"}
+                </span>
               </button>
             </form>
           )}
@@ -228,7 +317,7 @@ export function Contactos() {
           <div className="sidebar-card whatsapp-card">
             <h3>¿Necesitas atención inmediata?</h3>
             <p>Escríbenos por WhatsApp y te respondemos al instante.</p>
-            <a href="https://wa.me/573122932695" target="_blank" rel="noopener noreferrer" className="btn">
+            <a href="https://wa.me/573122932695?text=Hola%20EFINER,%20necesito%20asesor%C3%ADa." target="_blank" rel="noopener noreferrer" className="btn">
               <span className="btnLink">Escribir por WhatsApp</span>
             </a>
           </div>
